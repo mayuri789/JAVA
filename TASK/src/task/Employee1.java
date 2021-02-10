@@ -1,4 +1,3 @@
-
 //question -3
 
 package task;
@@ -17,30 +16,43 @@ class Emplo
 	
 	
 	
-	void Emplo(String fName, String lName)
+	void Emplo(String fName, String lName) 
 	{
 		
 		System.out.println("first name : "+fName+ "last name : "+lName);
+		try {
+		if (fName.length()<3 && lName.length()<3)
+		{
+			System.out.println("character should be less than 3");
+		}
+		else
+		{
+			System.out.println("");
+		}
+		}
+		catch(Exception e)
+		{
+			System.out.println("successful...");
+		}
 		
 	}
+	
 	
 	
 }
 
 public class Employee1 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NullPointerException{
 		// TODO Auto-generated method stub
 		
 		
-		try
-		{
+		
 		Emplo e=new Emplo(null,null );
-		}
-		catch(NullPointerException ne)
-		{
+		
+		
 			System.out.println("entry is missing ");
-		}
+		
 	}
 
 }
