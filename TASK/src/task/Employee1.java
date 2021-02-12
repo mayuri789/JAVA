@@ -16,42 +16,47 @@ class Emplo
 	
 	
 	
-	void Emplo(String fName, String lName) 
+	void validate() throws Exception
 	{
 		
-		System.out.println("first name : "+fName+ "last name : "+lName);
-		try {
-		if (fName.length()<3 && lName.length()<3)
+		System.out.println("first name : "+fName+ " last name : "+lName);
+		
+		if (fName==null && lName==null)
 		{
-			System.out.println("character should be less than 3");
+			throw new NullPointerException("entry is missing");
 		}
-		else
+		else if(fName.length()<3 && lName.length()<3)
 		{
-			System.out.println("");
+			throw new  Exception(" fname and lname must not be less than 3 ");
 		}
-		}
-		catch(Exception e)
-		{
-			System.out.println("successful...");
 		}
 		
-	}
 	
 	
 	
 }
 
-public class Employee1 {
+public class Employee1  {
 
-	public static void main(String[] args) throws NullPointerException{
+	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		
+		try
+		{
+			Emplo e=new Emplo(null,null );
+			e.validate();
+			Emplo e1=new Emplo("aa","nn" );
+			e.validate();
+		}
+		catch(NullPointerException ne )
+		{
+			System.out.println(ne);
+		}
 		
 		
-		Emplo e=new Emplo(null,null );
 		
 		
-			System.out.println("entry is missing ");
+			
 		
 	}
 
